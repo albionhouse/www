@@ -9,9 +9,9 @@
         "primaryColor": "#287bb5",
         "secondaryColor": "#0088d2",
         "successColor": "#3ecaf5",
-        "infoColor": "#ace1fb",
-        "warningColor": "#a9a9a8",
-        "dangerColor": "#d9d9d8",
+        "infoColor": "#e72125",
+        "warningColor": "#126b4d",
+        "dangerColor": "#fbdd1b",
         "mainFont": "Rubik",
         "display1Font": "Rubik",
         "display1Size": 4.25,
@@ -28,13 +28,13 @@
         "isScrollToTopButton": false
       },
       "additionalSetColors": [
+        "#e72125",
+        "#ace1fb",
+        "#126b4d",
+        "#fbdd1b",
+        "#262839",
         "#1f297c",
-        "#000000",
-        "#304560",
-        "#287bb5",
-        "#d9d9d8",
-        "#a9a9a8",
-        "#ace1fb"
+        "#000000"
       ]
     },
     "path": "@PROJECT_PATH@",
@@ -52,7 +52,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 349,
+    "uniqCompNum": 353,
     "versionPublish": "5.4.1",
     "screenshot": "screenshot.png",
     "robotsSwitcher": true,
@@ -614,55 +614,30 @@
         {
           "alias": false,
           "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            "& when not (@reverseContent)": {
-              "@media (min-width: 992px)": {
-                ".mbr-figure": {
-                  "padding-right": "4rem"
-                }
-              },
-              "@media (max-width: 991px)": {
-                ".mbr-figure": {
-                  "padding-bottom": "1rem"
-                }
-              }
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
             },
-            "& when (@reverseContent)": {
-              ".media-container-row": {
-                "flex-direction": "row-reverse",
-                "-webkit-flex-direction": "row-reverse"
-              },
-              "@media (min-width: 992px)": {
-                ".mbr-figure": {
-                  "padding-left": "4rem"
-                }
-              },
-              "@media (max-width: 991px)": {
-                ".media-container-row": {
-                  "flex-wrap": "wrap-reverse",
-                  "-webkit-flex-wrap": "wrap-reverse"
-                },
-                ".mbr-figure": {
-                  "padding-top": "1rem"
-                }
-              }
+            "& when (@bg-type = 'color')": {
+              "background": "linear-gradient(45deg, @bg-value, @color2)"
             },
-            ".mbr-text": {
-              "color": "#ffffff",
-              "text-align": "center"
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-section-subtitle": {
+              "font-style": "italic",
+              "letter-spacing": "1rem"
             }
           },
-          "_name": "content6",
+          "_name": "header11",
           "_sourceTheme": "mobirise4",
-          "_customHTML": "<section class=\"mbr-section content6\" group=\"Article\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n      <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n      <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n\n      <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"55\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\">  \n      <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#000000\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n    \n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12 col-md-8\">\n                <div class=\"media-container-row\">\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                      <img src=\"@PROJECT_PATH@/assets/images/arq-sydney-logo-320x114.jpg\" alt=\"ARQ\">  \n                    </div>\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text mb-0 mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">\n                               <b>Save ARQ Sydney</b><br>Sign the <a href=\"https://chng.it/Bt2JRwJHq6\" class=\"text-primary\" target=\"_blank\">petition</a></p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "sIo8CqLRIv",
-          "_anchor": "content6-9n",
+          "_customHTML": "<section class=\"header11\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}\">\n\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background4.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#262839\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#fbdd1b\" condition=\"bg.type == 'color'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <!-- End block parameters -->\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container align-left\">\n        <div class=\"media-container-column mbr-white col-md-12\">\n            <h3 class=\"mbr-section-subtitle py-3 mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\">\n                Expressions of Interest</h3>\n            <h1 class=\"mbr-section-title py-3 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">AN ICONIC ENTERTAINMENT VENUE WITH SUBSTANTIAL DEVELOPMENT UPSIDE</h1>\n            <p class=\"mbr-text py-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Savills &amp; CBRE as joint exclusive agents, are excited to offer for sale by way of Expressions of Interest ‘Albion House’, 10-24 Flinders Street, 4-10 Taylor Street &amp; 2 Sturt Street, Darlinghurst (Albion House).\n<br>\n<br>‘Albion House’ is zoned B2 Local Centre under the Sydney Local Environmental Plan 2012. It has a maximum permissible building height of 15m-18m and maximum FSR range of 2:1-3.5:1 and the potential for a maximum GFA of 3,750sq m* (STCA) across four story’s.\n<br>\n<br>The City of Sydney recently earmarked Oxford Street as a key priority area for renewal and revitalisation within the Local Strategic Planning Statement (City Plan 2036) endorsed in 2020. On the 5th May 2021, the City of Sydney released a draft planning proposal for the Oxford Street Creative Precinct, with the objective of reinvigorating what has long been one of Sydney’s iconic places.\n<br>\n<br>The draft planning proposal supports that the FSR and height limit is increased to 3.5:1-4:1 (with additional bonuses totalling 0.8:1 available) and 18m-23m, respectively, which will allowed for 6,000 sqm* (STCA) of allowable GFA across five to six story’s.\n<br>\n<br>Key features of the properties include:\n<br>\n<br>• Rare opportunity to secure a freehold asset occupying a prime corner position on one of Sydney’s iconic thoroughfares (Available for only the second time in 80 years).\n<br>\n<br>• Prominent 1,300sq m* corner site with significant 35m* frontage to Flinders Street &amp; 26*m to Taylor Street.\n<br>\n<br>• Elevated position with Sydney CBD skyline and district views\n<br>\n<br>• The existing improvements are substantially underdeveloped with recent planning changes allowing an FSR increase from 2.0-3.5:1 to 4.3 – 4.8:1, subject to necessary consents.\n<br>\n<br>• Significant development potential with multiple value-add options.\n<br>\n<br>• Unique 24-hour liquor license\n<br>\n<br>‘Albion House’ is being offered for sale via an Expressions of Interest campaign closing at 4:00pm (AEST) on 14th October 2021.\n<br>\n<br>For more information or to request access to the due diligence room, please contact the exclusive selling agents.</p>\n            <div class=\"mbr-section-btn py-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-danger\" href=\"https://search.savills.com/au/en/property-detail/aus2ht039998s?utm_source=search.savills.com&utm_medium=shared_property&utm_campaign=detail_page?utm_source=search.savills.com&utm_medium=shared_property&utm_campaign=detail_page\" data-app-placeholder=\"Type Text\" target=\"_blank\">savills</a> <a class=\"btn btn-md btn-warning\" href=\"https://www.cbre.com.au/\" data-app-placeholder=\"Type Text\" target=\"_blank\">CBRE</a></div>\n        </div>\n    </div>\n\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_cid": "sJVwSTdJ3m",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {}
+          "_params": {},
+          "_anchor": "header11-9r"
         },
         {
           "alias": false,
@@ -703,13 +678,13 @@
               }
             },
             ".mbr-text": {
-              "color": "#1f297c",
-              "text-align": "center"
+              "color": "#000000",
+              "text-align": "left"
             }
           },
           "_name": "content7",
           "_sourceTheme": "mobirise4",
-          "_customHTML": "<section class=\"mbr-section content7\" group=\"Article\">\n          \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->   \n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"35\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\" checked> \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\">\n                <div class=\"media-container-row\">\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text align-right mb-0 mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">\n                               <b>Save Bodyline S</b><b>pa &amp; Sauna</b><br>&nbsp;Sign the <a href=\"https://chng.it/Bt2JRwJHq6\" class=\"text-primary\" target=\"_blank\">petition</a></p>\n                        </div>\n                    </div>\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                     <img src=\"@PROJECT_PATH@/assets/images/bl-290x160.png\" alt=\"Bodyline\">  \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section content7\" group=\"Article\">\n          \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->   \n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"35\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\" checked> \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\">\n                <div class=\"media-container-row\">\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text align-right mb-0 mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\"><b>Save Albion House from residential redevelopment</b><br>Sign the <a href=\"https://www.change.org/savearq\" class=\"text-info\" target=\"_blank\">petition</a></p>\n                        </div>\n                    </div>\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                     <a href=\"https://www.change.org/p/save-arq-bodyline-albion-house-from-residential-redevelopment\" target=\"_blank\"><img src=\"@PROJECT_PATH@/assets/images/changeorgrgb-source-1280px-457x90.png\" alt=\"change.org\"></a>  \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "sIo8DDXVvT",
           "_anchor": "content7-9o",
           "_protectedParams": [],
