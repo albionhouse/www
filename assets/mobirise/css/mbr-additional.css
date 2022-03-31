@@ -1057,9 +1057,9 @@ section.lazy-placeholder:after {
   }
 }
 .cid-s4OOsQHJNE {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  background-color: #ace1fb;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #2b93d1;
 }
 @media (min-width: 992px) {
   .cid-s4OOsQHJNE .mbr-figure {
@@ -1072,11 +1072,11 @@ section.lazy-placeholder:after {
   }
 }
 .cid-s4OOsQHJNE .mbr-text {
-  color: #0088d2;
+  color: #ffffff;
   text-align: right;
 }
 .cid-sXoARL5lwg {
-  padding-top: 15px;
+  padding-top: 30px;
   padding-bottom: 30px;
   background-color: #ace1fb;
 }
