@@ -21075,7 +21075,7 @@ section.lazy-placeholder:after {
 .cid-rYOlhEwxVF {
   background: #ffffff;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 0px;
 }
 .cid-rYOlhEwxVF .image-block {
   margin: auto;
@@ -21095,14 +21095,14 @@ section.lazy-placeholder:after {
 }
 .cid-rYOily2CBW {
   padding-top: 15px;
-  padding-bottom: 45px;
+  padding-bottom: 30px;
   background-color: #ffffff;
 }
 .cid-rYOily2CBW div.b {
   padding-top: 2rem;
 }
 .cid-rYOily2CBW .mbr-text {
-  color: #0088d2;
+  color: #000000;
   margin: 0;
   padding-top: 1.5rem;
 }
@@ -21111,7 +21111,7 @@ section.lazy-placeholder:after {
   border-radius: 3px;
 }
 .cid-rYOily2CBW .google-map {
-  height: 28rem;
+  height: 20rem;
   position: relative;
 }
 .cid-rYOily2CBW .google-map iframe {
