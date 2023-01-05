@@ -63,7 +63,7 @@
     "favicon": "@PROJECT_PATH@/assets/images/albion-house-stacked-b-128x90_2.png",
     "cookiesAlert": false,
     "gdpr": false,
-    "publishChangesOnly": false,
+    "publishChangesOnly": true,
     "mbrsiteDomain": "hchzy26fpa"
   },
   "pages": {
