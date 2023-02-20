@@ -1127,6 +1127,28 @@ section.lazy-placeholder:after {
     justify-content: center;
   }
 }
+.cid-tvxzwb4EGD {
+  background: #000000;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: linear-gradient(45deg, #000000, #3e4756);
+}
+.cid-tvxzwb4EGD .image-block {
+  margin: auto;
+}
+.cid-tvxzwb4EGD figcaption {
+  position: relative;
+}
+.cid-tvxzwb4EGD figcaption div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .cid-tvxzwb4EGD .image-block {
+    width: 100% !important;
+  }
+}
 .cid-rZtYJFxWRw {
   padding-top: 15px;
   padding-bottom: 15px;
