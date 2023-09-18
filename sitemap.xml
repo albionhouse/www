@@ -1,8 +1,5 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://albionhouse.com.au/index.html</loc>
-	</url>
-	<url>
 		<loc>https://albionhouse.com.au/rooms.html</loc>
 	</url>
 	<url>
@@ -99,6 +96,9 @@
 		<loc>https://albionhouse.com.au/offers.html</loc>
 	</url>
 	<url>
-		<loc>https://albionhouse.com.au/unauthorised.html</loc>
+		<loc>https://albionhouse.com.au/home.html</loc>
+	</url>
+	<url>
+		<loc>https://albionhouse.com.au/index-old.html</loc>
 	</url>
 </urlset>
